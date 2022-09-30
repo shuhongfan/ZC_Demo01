@@ -1,0 +1,84 @@
+//
+// Component: Accordion
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@accordion-title-margin-bottom:                 @global-margin;
+@accordion-title-padding-vertical:              10px;
+@accordion-title-padding-horizontal:            20px;
+@accordion-title-font-size:                     round((@global-font-size * 1.1)); // 18px / 20px
+@accordion-title-line-height:                   round((@accordion-title-font-size * 1.32)); // 24px / 26px
+@accordion-title-background:                    rgba(0,0,0,0);
+
+@accordion-content-padding-bottom:              @global-margin;
+
+// New variables
+
+@accordion-title-font-family: 					"Droid Serif", serif;
+@accordion-title-text-transform: 				none;
+@accordion-title-hover-background:              @global-light-background;
+@accordion-title-active-background:             @accordion-title-hover-background;
+
+
+// Component
+// ========================================================================
+
+.hook-accordion() {}
+
+
+// Modifier: `uk-accordion-title`
+// ========================================================================
+
+.hook-accordion-title() {
+
+	position: relative;
+	font-family: @accordion-title-font-family;
+	text-transform: @accordion-title-text-transform;
+    border-left: @bh-headline-left-border-width solid @bh-headline-left-border;
+	-webkit-transition: background 0.25s;
+        	transition: background 0.25s;
+
+	&:hover {
+		background: @accordion-title-hover-background;
+    	-webkit-transition: background 0.25s;
+            	transition: background 0.25s;
+	}
+
+	&:after {
+		right: @accordion-title-padding-horizontal;
+		content: '\f107';
+		position: absolute;
+		font-family: FontAwesome;
+	    display: inline-block;
+	    font-weight: normal;
+	    font-style: normal;
+	    line-height: inherit;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	}
+
+	&.uk-active {
+
+		background: @accordion-title-active-background;
+
+		&:after { content: '\f106'; }
+
+	}
+
+}
+
+
+// Modifier: `uk-accordion-content`
+// ========================================================================
+
+.hook-accordion-content() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-accordion-misc() {}

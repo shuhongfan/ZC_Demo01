@@ -1,0 +1,40 @@
+//
+// Component: Description list
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@description-list-line-border:                  @global-border;
+@description-list-line-color:                   @global-muted-color;
+
+// New variables
+
+@description-list-text-transform: 				@global-text-transform;
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-description-list-misc() {
+
+	/* Modifier: `uk-description-list-horizontal`
+	 ========================================================================== */
+
+	/* Tablet and bigger */
+
+	@media (min-width: @breakpoint-medium) {
+
+
+	    .uk-description-list-horizontal > dt {
+	        font-weight: normal;
+	        text-transform: @description-list-text-transform;
+	    }
+
+	    .uk-description-list-horizontal > dd { margin-left: @description-list-horizontal-margin-left; }
+
+	}
+
+}

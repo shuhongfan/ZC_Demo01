@@ -1,0 +1,282 @@
+//
+// Component: Nav
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@nav-padding-vertical:                          8px;
+@nav-padding-horizontal:                        0;
+
+@nav-header-font-size:                          @global-font-size;
+@nav-header-font-weight:                        normal;
+@nav-header-margin-top:                         @global-margin;
+
+@nav-sub-padding-vertical:                      10px;
+@nav-sub-padding-left:                          15px;
+
+@nav-parent-icon-width:                         @global-line-height;
+@nav-parent-icon-margin-right:                  -5px;
+
+@nav-side-color:                                @global-muted-color;
+@nav-side-hover-background:                     rgba(0,0,0,0);
+@nav-side-hover-color:                          @global-color;
+@nav-side-active-background:                    rgba(0,0,0,0);
+@nav-side-active-color:                         @global-primary-color;
+@nav-side-header-color:                         @global-color;
+@nav-side-divider-border:                       @global-border;
+@nav-side-nested-color:                         @global-muted-color;
+@nav-side-nested-hover-color:                   @global-color;
+
+@nav-dropdown-color:                            @global-muted-color;
+@nav-dropdown-hover-background:                 rgba(0,0,0,0);
+@nav-dropdown-hover-color:                      @global-color;
+@nav-dropdown-header-color:                     @global-color;
+@nav-dropdown-divider-border:                   @global-border;
+@nav-dropdown-nested-color:                     @global-muted-color;
+@nav-dropdown-nested-hover-color:               @global-color;
+
+@nav-navbar-color:                              @global-muted-color;
+@nav-navbar-hover-background:                   rgba(0,0,0,0);
+@nav-navbar-hover-color:                        @global-color;
+@nav-navbar-header-color:                       @global-color;
+@nav-navbar-divider-border:                     @global-border;
+@nav-navbar-nested-color:                       @global-muted-color;
+@nav-navbar-nested-hover-color:                 @global-color;
+
+@nav-offcanvas-padding-vertical:                10px;
+@nav-offcanvas-padding-horizontal:              15px;
+@nav-offcanvas-color:                           @offcanvas-panel-link-color;
+@nav-offcanvas-hover-background:                rgba(0,0,0,0);
+@nav-offcanvas-hover-color:                     @offcanvas-panel-color;
+@nav-offcanvas-active-background:               rgba(0,0,0,0);
+@nav-offcanvas-active-color:                    @offcanvas-panel-color;
+@nav-offcanvas-header-color:                    @offcanvas-panel-color;
+@nav-offcanvas-divider-border:                  darken(@offcanvas-bar-background, 5%);
+@nav-offcanvas-divider-border-width: 			5px;
+@nav-offcanvas-nested-color:                    @offcanvas-panel-link-color;
+@nav-offcanvas-nested-hover-color:              @offcanvas-panel-color;
+
+// New variables
+
+@nav-side-border-top:							@global-border;
+@nav-side-border-top-width:						@global-border-width;
+
+@nav-dropdown-border-top:						@global-border;
+@nav-dropdown-border-top-width:					@global-border-width;
+
+@nav-navbar-border-top:							@global-border;
+@nav-navbar-border-top-width:					@global-border-width;
+
+@nav-offcanvas-border-width:					3px;
+@nav-offcanvas-hover-border:					darken(@nav-offcanvas-hover-background, 5%);
+@nav-offcanvas-active-border:					@global-primary-color;
+@nav-offcanvas-nested-padding-vertical:			10px;
+@nav-offcanvas-nested-padding-horizontal:		25px;
+@nav-offcanvas-header-background:               darken(@offcanvas-bar-background, 7%);
+@nav-offcanvas-header-border: 					lighten(@offcanvas-bar-background, 7%);
+@nav-offcanvas-nav-item-border: 				lighten(@offcanvas-bar-background, 5%);
+@nav-offcanvas-nav-sub-background: 				darken(@offcanvas-bar-background, 3%);
+
+
+// Sub-object: `uk-nav-header`
+// ========================================================================
+
+.hook-nav-header() {}
+
+
+// Sub-object: `uk-nav-divider`
+// ========================================================================
+
+.hook-nav-divider() {}
+
+
+// Sub-object: `uk-nav-sub`
+// ========================================================================
+
+.hook-nav-sub() {
+	padding-top: 0;
+}
+
+
+// Modifier: `uk-nav-parent-icon`
+// ========================================================================
+
+.hook-nav-parent-icon() {}
+
+
+// Modifier `uk-nav-side`
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-nav-side() {
+	border-top: @nav-side-border-top-width solid @nav-side-border-top;
+}
+
+// Hover
+.hook-nav-side-hover() {}
+
+// Active
+.hook-nav-side-active() {}
+
+//
+// Sub-object: `uk-nav-header`
+//
+
+.hook-nav-side-header() {}
+
+//
+// Sub-object: `uk-nav-divider`
+//
+
+.hook-nav-side-divider() {}
+
+
+// Modifier `uk-nav-dropdown`
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-nav-dropdown() {
+	border-top: @nav-dropdown-border-top-width solid @nav-dropdown-border-top;
+}
+
+// Hover
+.hook-nav-dropdown-hover() {}
+
+//
+// Sub-object: `uk-nav-header`
+//
+
+.hook-nav-dropdown-header() {}
+
+//
+// Sub-object: `uk-nav-divider`
+//
+
+.hook-nav-dropdown-divider() {}
+
+
+// Modifier `uk-nav-navbar`
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-nav-navbar() {
+	border-top: @nav-navbar-border-top-width solid @nav-navbar-border-top;
+}
+
+// Hover
+.hook-nav-navbar-hover() {}
+
+//
+// Sub-object: `uk-nav-header`
+//
+
+.hook-nav-navbar-header() {}
+
+//
+// Sub-object: `uk-nav-divider`
+//
+
+.hook-nav-navbar-divider() {}
+
+
+// Modifier `uk-nav-offcanvas`
+// ========================================================================
+
+.hook-nav-offcanvas-link() {}
+
+.hook-nav-offcanvas-link-hover() {}
+
+//
+// Items
+//
+
+.hook-nav-offcanvas() {
+    border-bottom: 1px solid @nav-offcanvas-nav-item-border;
+    border-left: @nav-offcanvas-border-width solid transparent;
+}
+
+// Hover
+.hook-nav-offcanvas-hover() {
+	border-left-color: @nav-offcanvas-hover-border;
+}
+
+// Active
+.hook-nav-offcanvas-active() {
+	border-left-color: @nav-offcanvas-active-border;
+}
+
+//
+// Sub-object: `uk-nav-header`
+//
+
+.hook-nav-offcanvas-header() {
+    margin-top: 0;
+    padding: @nav-offcanvas-padding-vertical @nav-offcanvas-padding-horizontal;
+    border-top: 1px solid @nav-offcanvas-nav-item-border;
+    border-bottom: 2px solid @nav-offcanvas-header-border;
+    background: @nav-offcanvas-header-background;
+}
+
+//
+// Sub-object: `uk-nav-divider`
+//
+
+.hook-nav-offcanvas-divider() {
+	margin: 0;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-nav-misc() {
+
+	.uk-nav:not([class*='uk-nav-offcanvas']) > li > a {
+		margin: 0 @nav-padding-horizontal;
+		padding: @nav-padding-vertical 0;
+	}
+
+	.uk-nav > li:first-child > a,
+	.uk-nav .uk-nav-divider + li > a,
+	.uk-nav .uk-nav-header + li > a { border-top-width: 0; }
+
+
+	// Modifier `uk-nav-offcanvas`
+
+	.uk-nav-offcanvas > li:first-child > a { border-top: 1px solid @nav-offcanvas-nav-item-border; }
+    .uk-nav-offcanvas > li + .uk-nav-divider { margin-top: -1px; }
+
+    .uk-nav-offcanvas a > [class*='uk-icon-'] { color: @nav-offcanvas-color; }
+
+    .uk-nav-offcanvas .uk-nav-sub {
+
+		padding: 0;
+		border-bottom: 1px solid @nav-offcanvas-nav-item-border;
+        background: @nav-offcanvas-nav-sub-background;
+
+		ul { padding: 0; }
+
+    	ul > li > a { padding-left: @nav-offcanvas-nested-padding-horizontal + 10px; }
+
+		> li > a,
+    	ul > li > a { border-top: 1px solid @nav-offcanvas-nav-item-border; }
+
+		> li:first-child > a { border-top-width: 0; }
+
+    }
+
+    .uk-nav-offcanvas ul a { padding: @nav-offcanvas-nested-padding-vertical @nav-offcanvas-nested-padding-horizontal; }
+
+}

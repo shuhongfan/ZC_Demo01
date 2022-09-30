@@ -1,0 +1,110 @@
+//
+// Component: Comment
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@comment-header-margin-bottom:                  @global-margin;
+
+@comment-avatar-margin-right:                   @global-margin;
+
+@comment-title-font-size:                       @global-font-size;
+@comment-title-line-height:                     round((@comment-title-font-size * 1.42));
+
+@comment-meta-color:                            @global-muted-color;
+@comment-meta-font-size:                        round((@global-font-size * 0.85));
+@comment-meta-line-height:                      round((@comment-meta-font-size * 1.49));
+
+@comment-list-margin-top:                       @global-margin;
+@comment-list-padding-left: 					50px + @comment-avatar-margin-right;
+
+// New variables
+
+@comment-title-font-family: 					"Droid Serif", serif;
+@comment-title-text-transform: 					@global-text-transform;
+
+@comment-primary-title-color: 					@global-primary-color;
+@comment-body-margin-left: 						@comment-avatar-margin-right + 50px;
+
+@comment-divider-margin-left: 					@comment-body-margin-left;
+@comment-divider-border: 						@global-border;
+@comment-divider-height: 						1px;
+
+
+// Component
+// ========================================================================
+
+.hook-comment() {}
+
+
+// Sub-object `uk-comment-header`
+// ========================================================================
+
+.hook-comment-header() {}
+
+
+// Sub-object `uk-comment-avatar`
+// ========================================================================
+
+.hook-comment-avatar() {}
+
+
+// Sub-object `uk-comment-title`
+// ========================================================================
+
+.hook-comment-title() {
+	font-family: @comment-title-font-family;
+}
+
+
+// Sub-object `uk-comment-meta`
+// ========================================================================
+
+.hook-comment-meta() {}
+
+
+// Sub-object `uk-comment-body`
+// ========================================================================
+
+.hook-comment-body() {
+	margin-left: @comment-body-margin-left;
+}
+
+
+// Sub-object `uk-comment-primary`
+// ========================================================================
+
+.hook-comment-primary() {
+
+	.uk-comment-title { color: @comment-primary-title-color; }
+
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-comment-misc() {
+
+	.uk-comment-list > li:nth-child(n+2),
+	.uk-comment-list .uk-comment + ul > li:nth-child(n+2) {
+
+		position: relative;
+		padding-top: @comment-list-margin-top;
+
+		&:before {
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    left: @comment-divider-margin-left;
+		    height: @comment-divider-height;
+		    background: @comment-divider-border;
+		    content: '';
+		}
+
+	}
+
+}

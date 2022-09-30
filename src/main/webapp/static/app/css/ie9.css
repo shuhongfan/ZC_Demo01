@@ -1,0 +1,4 @@
+/* Specific IE9 CSS changes
+ ========================================================================== */
+
+[data-uk-scrollspy*='uk-animation-'] { opacity: 1 !important; }

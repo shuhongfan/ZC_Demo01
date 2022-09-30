@@ -1,0 +1,24 @@
+
+server:
+  port: 8000
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.120.20:3307/zc?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+  mvc:
+    view:
+      prefix: /pages/
+      suffix: .jsp
+mybatis:
+  mapper-locations: classpath:com/app/mapper/*.xml
+  type-aliases-package: com.app.entity
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug

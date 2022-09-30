@@ -1,0 +1,79 @@
+//
+// Component: Overlay
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@overlay-panel-background:                      fade(@global-primary-background, 70%);
+
+@overlay-icon-size:                             25px;
+@overlay-icon-color:                            @global-contrast-color;
+
+
+// Sub-object `uk-overlay-area`
+// ========================================================================
+
+.hook-overlay-area() {}
+.hook-overlay-area-icon() {}
+
+
+// Sub-object `uk-overlay-area-content`
+// ========================================================================
+
+.hook-overlay-area-content() {}
+
+
+// Sub-object `uk-overlay-caption`
+// ========================================================================
+
+.hook-overlay-caption() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-overlay-misc() {
+
+	// Set default color if not overlay-background
+	.uk-overlay-panel:not(.uk-overlay-background) { color: @global-color; }
+
+	/*
+	 * Fade
+	 */
+
+	.uk-overlay:hover img.uk-overlay-fade { opacity: @overlay-fade-in-opacity; }
+
+	/*
+	 * Scale
+	 */
+
+	.uk-overlay:hover img.uk-overlay-scale {
+	    -webkit-transform: scale(@overlay-scale-in-scale);
+	    	-ms-transform: scale(@overlay-scale-in-scale);
+	    		transform: scale(@overlay-scale-in-scale);
+	}
+
+	/*
+	 * Spin
+	 */
+
+	.uk-overlay:hover img.uk-overlay-spin {
+	    -webkit-transform: scale(@overlay-spin-in-scale) rotate(@overlay-spin-in-rotate);
+	    	-ms-transform: scale(@overlay-spin-in-scale) rotate(@overlay-spin-in-rotate);
+	    		transform: scale(@overlay-spin-in-scale) rotate(@overlay-spin-in-rotate);
+	}
+
+	/*
+	 * Grayscale
+	 */
+
+	.uk-overlay:hover img.uk-overlay-grayscale {
+	    -webkit-filter: grayscale(0%);
+	    	-ms-filter: grayscale(0%);
+	    		filter: grayscale(0%);
+	}
+
+}

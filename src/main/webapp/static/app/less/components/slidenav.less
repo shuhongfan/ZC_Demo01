@@ -1,0 +1,97 @@
+//
+// Component: Slidenav
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@slidenav-width:                                50px;
+@slidenav-color:                                @global-contrast-color;
+@slidenav-font-size:                            round((@global-font-size * 1.71)); // 60px / 24px
+
+@slidenav-hover-color:                          @global-contrast-color;
+
+@slidenav-active-color:                         @global-contrast-color;
+
+@slidenav-position-previous:                    0;
+@slidenav-position-next:                        @slidenav-position-previous;
+
+
+// New
+
+@slidenav-background: 							@global-dark-background;
+@slidenav-hover-background: 					@global-primary-background;
+@slidenav-hover-height: 						120px;
+
+
+// Component
+// ========================================================================
+
+.hook-slidenav() {
+	z-index: 1; /* Fix for slideshow */
+}
+
+.hook-slidenav-previous() {}
+
+.hook-slidenav-next() {}
+
+.hook-slidenav-hover() {
+
+	&:before {
+	    margin-top: -(@slidenav-hover-height - @slidenav-height) / 2;
+	    border-color: @slidenav-hover-background;
+	    border-top-width: (@slidenav-hover-height - @slidenav-height) / 2;
+	    border-bottom-width: (@slidenav-hover-height - @slidenav-height) / 2;
+	    background: @slidenav-hover-background;
+	    -webkit-transition-delay: 0s;
+	            transition-delay: 0s;
+	}
+
+}
+
+.hook-slidenav-active() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-slidenav-misc() {
+
+	.uk-slidenav:before {
+		z-index: 10;
+	    display: inline-block;
+	    background: @slidenav-background;
+	    width: @slidenav-width;
+	    height: @slidenav-height;
+	    -moz-box-sizing: content-box;
+    	     box-sizing: content-box;
+		border: 0 solid transparent;
+		-webkit-transition: border-width .20s .10s, background-color 0s .30s, margin-top 0s .30s;
+				transition: border-width .20s .10s, background-color 0s .30s, margin-top 0s .30s;
+	}
+
+	.uk-slidenav-position .uk-slidenav {
+		display: block;
+	    margin-top: 0;
+	    -webkit-transform: translateY(-50%);
+	    	-ms-transform: translateY(-50%);
+			    transform: translateY(-50%);
+	}
+
+	/*
+	 * 1. Need to be set for correct height calculation
+	 */
+
+	.uk-slidenav-position {
+	    z-index: 2;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+	    /* 1 */
+	    display: block;
+	}
+
+}

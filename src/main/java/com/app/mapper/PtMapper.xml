@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.mapper.PtDAO"> 
+    <select id="getPtById"  resultType="com.app.entity.Pt">
+        select
+        * from Pt where `id`=#{id}
+    </select>
+    <delete id="delete">
+		delete from Pt where id=#{id}
+	</delete>
+    <select id="getPtCount" resultType="int">
+        select count(id) from Pt
+    </select>
+    <select id="getAllPt" resultType="com.app.entity.Pt">
+        select * from Pt
+    </select>
+    <insert id="insert" parameterType="com.app.entity.Pt">
+        insert into
+        Pt(product_name,ids,price,description,thumb,userid) 
+        values(#{product_name},#{ids},#{price},#{description},#{thumb},#{userid});
+    </insert>
+        
+    <update id="update" parameterType="com.app.entity.Pt">
+		update Pt set product_name=#{product_name},ids=#{ids},price=#{price},description=#{description},thumb=#{thumb},userid=#{userid} where id=#{id}
+	</update>
+        </mapper>

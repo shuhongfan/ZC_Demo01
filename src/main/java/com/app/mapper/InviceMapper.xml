@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.mapper.InviceDAO"> 
+    <select id="getInviceById"  resultType="com.app.entity.Invice">
+        select
+        * from Invice where `id`=#{id}
+    </select>
+    <delete id="delete">
+		delete from Invice where id=#{id}
+	</delete>
+    <select id="getInviceCount" resultType="int">
+        select count(id) from Invice
+    </select>
+    <select id="getAllInvice" resultType="com.app.entity.Invice">
+        select * from Invice
+    </select>
+    <insert id="insert" parameterType="com.app.entity.Invice">
+        insert into
+        Invice(uid,mid,content,type,created,updated,status,reply) 
+        values(#{uid},#{mid},#{content},#{type},#{created},#{updated},#{status},#{reply});
+    </insert>
+        
+    <update id="update" parameterType="com.app.entity.Invice">
+		update Invice set uid=#{uid},mid=#{mid},content=#{content},type=#{type},created=#{created},updated=#{updated},status=#{status},reply=#{reply} where id=#{id}
+	</update>
+        </mapper>

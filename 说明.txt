@@ -1,0 +1,7 @@
+您好，谢谢您使用！  
+系统使用JAVA+MYSQL SSM SPRINGBOOT  使用Myeclipse开发 Maven构建
+jdk 1.7
+测试 tomcat7.0+
+配置文件 src/main/resource/application.yml
+打开LdhfApplication.java  右键run as java application
+测试账号 admin 密码111

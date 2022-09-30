@@ -1,0 +1,41 @@
+//
+// Component: Modal
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@modal-z-index:                                 @global-z-index + 10;
+
+@modal-dialog-background:                       @global-background;
+@modal-dialog-padding:                          40px;
+
+
+// Component
+// ========================================================================
+
+.hook-modal() {}
+
+
+// Sub-object: `uk-modal-dialog`
+// ========================================================================
+
+.hook-modal-dialog() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-modal-misc() {
+
+	/* Close in modal
+	 ========================================================================== */
+
+	.uk-modal-dialog > .uk-close:not(.uk-close-alt):first-child {
+	    margin: -25px -25px 0 0;
+	    float: right;
+	}
+
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.mapper.CategoryDAO"> 
+    <select id="getCategoryById"  resultType="com.app.entity.Category">
+        select
+        * from Category where `id`=#{id}
+    </select>
+    <delete id="delete">
+		delete from Category where id=#{id}
+	</delete>
+    <select id="getCategoryCount" resultType="int">
+        select count(id) from Category
+    </select>
+    
+    <select id="getCategoryByCate" resultType="com.app.entity.Category">
+        select * from Category where pid=#{pid}
+    </select>
+    <select id="getAllCategory" resultType="com.app.entity.Category">
+        select * from Category
+    </select>
+    
+    <insert id="insert" parameterType="com.app.entity.Category">
+        insert into
+        Category(pid,title,thumb,description,created,updated,status) 
+        values(#{pid},#{title},#{thumb},#{description},#{created},#{updated},#{status});
+    </insert>
+        
+    <update id="update" parameterType="com.app.entity.Category">
+		update Category set pid=#{pid},title=#{title},thumb=#{thumb},description=#{description},created=#{created},updated=#{updated},status=#{status} where id=#{id}
+	</update>
+        </mapper>

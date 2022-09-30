@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.mapper.MembersDAO"> 
+    <select id="getMembersById"  resultType="com.app.entity.Members">
+        select
+        * from Members where `id`=#{id}
+    </select>
+    <delete id="delete">
+		delete from Members where id=#{id}
+	</delete>
+    <select id="getMembersCount" resultType="int">
+        select count(id) from Members
+    </select>
+    <select id="getAllMembers" resultType="com.app.entity.Members">
+        select * from Members
+    </select>
+     <select id="getMembersByType" resultType="com.app.entity.Members">
+        select * from Members where type=#{type}
+    </select>
+      <select id="getMembersByTel" resultType="com.app.entity.Members">
+        select * from Members where tel=#{tel}
+    </select>
+      <select id="login" parameterType="String" resultType="com.app.entity.Members">
+        select * from Members where username=#{username} AND password=#{password} AND status=1
+    </select>
+    <select id="login2" parameterType="String" resultType="com.app.entity.Members">
+        select * from Members where tel=#{tel} AND grade=#{grade}
+    </select>
+    <insert id="insert" parameterType="com.app.entity.Members">
+        insert into
+        Members(xx,zy,nj,username,password,sex,birthday,address,email,qq,tel,money,thumb,grade,type,created,updated,status,jf,age,maincontent,description) 
+        values(#{xx},#{zy},#{nj},#{username},#{password},#{sex},#{birthday},#{address},#{email},#{qq},#{tel},#{money},#{thumb},#{grade},#{type},#{created},#{updated},#{status},#{jf},#{age},#{maincontent},#{description});
+    </insert>
+        
+    <update id="update" parameterType="com.app.entity.Members">
+		update Members set xx=#{xx},zy=#{zy},nj=#{nj},username=#{username},password=#{password},sex=#{sex},birthday=#{birthday},address=#{address},email=#{email},qq=#{qq},tel=#{tel},money=#{money},thumb=#{thumb},grade=#{grade},type=#{type},created=#{created},updated=#{updated},status=#{status},jf=#{jf},age=#{age},maincontent=#{maincontent},description=#{description} where id=#{id}
+	</update>
+        </mapper>

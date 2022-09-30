@@ -1,0 +1,83 @@
+//
+// Component: Badge
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@badge-background:                              @global-dark-background;
+@badge-font-size:                               12px;
+@badge-line-height:                             round((@badge-font-size * 1.36));
+@badge-color:                                   @global-contrast-color;
+@badge-hover-color:                             @global-contrast-color;
+@badge-text-transform:                          @global-text-transform;
+
+@badge-notification-font-size:                  round((@global-font-size * 0.85));
+@badge-notification-line-height:                round((@badge-notification-font-size * 1.46));
+
+@badge-success-background:                      @global-success-background;
+@badge-warning-background:                      @global-warning-background;
+@badge-danger-background:                       @global-primary-background;
+
+// New variables
+
+@badge-padding-vertical: 						4px;
+
+@badge-border-width:							3px;
+@badge-border:									darken(@badge-background, 7%);
+@badge-success-border:							darken(@badge-success-background, 10%);
+@badge-warning-border:							darken(@badge-warning-background, 10%);
+@badge-danger-border:							darken(@badge-danger-background, 10%);
+
+
+// Component
+// ========================================================================
+
+.hook-badge() {
+    z-index: 3;
+    padding: @badge-padding-vertical @badge-padding-horizontal;
+    border-left: @badge-border-width solid @badge-border;
+    color: @badge-color !important;
+}
+
+// Color modifier
+// ========================================================================
+
+//
+// Modifier: `badge-success`
+//
+
+.hook-badge-success() {
+	border-color: @badge-success-border;
+}
+
+//
+// Modifier: `badge-warning`
+//
+
+.hook-badge-warning() {
+	border-color: @badge-warning-border;
+}
+
+//
+// Modifier: `badge-danger`
+//
+
+.hook-badge-danger() {
+	border-color: @badge-danger-border;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-badge-misc() {
+
+	.uk-badge-notification {
+		min-width: @badge-notification-line-height + (2 * @badge-padding-vertical);
+		border-width: 0;
+	}
+
+}

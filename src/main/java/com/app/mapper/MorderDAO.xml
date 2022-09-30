@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.mapper.MorderDAO"> 
+    <select id="getMorderById"  resultType="com.app.entity.Morder">
+        select
+        * from Morder where `id`=#{id}
+    </select>
+    <delete id="delete">
+		delete from Morder where id=#{id}
+	</delete>
+    <select id="getMorderCount" resultType="int">
+        select count(id) from Morder
+    </select>
+    <select id="getMorderByUid" resultType="com.app.entity.Morder">
+        select * from Morder where uid=#{uid} OR shopid=#{uid}
+    </select>
+    
+      <select id="getMorderCMT" resultType="com.app.entity.Morder">
+        select * from Morder WHERE content!='' and pid=#{pid}
+    </select>
+     <select id="getMorderByPid" resultType="com.app.entity.Morder">
+        select * from Morder WHERE  pid=#{pid}
+    </select>
+    <select id="getAllMorder" resultType="com.app.entity.Morder">
+        select * from Morder
+    </select>
+    <insert id="insert" parameterType="com.app.entity.Morder">
+        insert into
+        Morder(express,order_id,price,total,uid,pid,cuid,num,content,step,updated,created,status,buyer,pname,type,saler,shopid,shopname,ordersn,y,m,d) 
+        values(#{express},#{order_id},#{price},#{total},#{uid},#{pid},#{cuid},#{num},#{content},#{step},#{updated},#{created},#{status},#{buyer},#{pname},#{type},#{saler},#{shopid},#{shopname},#{ordersn},#{y},#{m},#{d});
+    </insert>
+        
+    <update id="update" parameterType="com.app.entity.Morder">
+		update Morder set express=#{express},order_id=#{order_id},price=#{price},total=#{total},uid=#{uid},pid=#{pid},cuid=#{cuid},num=#{num},content=#{content},step=#{step},updated=#{updated},created=#{created},status=#{status},buyer=#{buyer},pname=#{pname},type=#{type},saler=#{saler},shopid=#{shopid},shopname=#{shopname},ordersn=#{ordersn},y=#{y},m=#{m},d=#{d} where id=#{id}
+	</update>
+        </mapper>

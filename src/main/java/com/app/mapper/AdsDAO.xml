@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.mapper.AdsDAO"> 
+    <select id="getAdsById"  resultType="com.app.entity.Ads">
+        select
+        * from Ads where `id`=#{id}
+    </select>
+    <delete id="delete">
+		delete from Ads where id=#{id}
+	</delete>
+    <select id="getAdsCount" resultType="int">
+        select count(id) from Ads
+    </select>
+    <select id="getAllAds" resultType="com.app.entity.Ads">
+        select * from Ads order by id desc
+    </select>
+    <insert id="insert" parameterType="com.app.entity.Ads">
+        insert into
+        Ads(title,url,thumb,created,updated,status,intro) 
+        values(#{title},#{url},#{thumb},#{created},#{updated},#{status},#{intro});
+    </insert>
+        
+    <update id="update" parameterType="com.app.entity.Ads">
+		update Ads set title=#{title},url=#{url},thumb=#{thumb},created=#{created},updated=#{updated},status=#{status},intro=#{intro} where id=#{id}
+	</update>
+        </mapper>

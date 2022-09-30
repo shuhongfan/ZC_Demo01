@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.mapper.ProductsDAO"> 
+    <select id="getProductsById"  resultType="com.app.entity.Products">
+        select
+        * from Products where `id`=#{id}
+    </select>
+    <delete id="delete">
+		delete from Products where id=#{id}
+	</delete>
+    <select id="getProductsCount" resultType="int">
+        select count(id) from Products
+    </select>
+    <select id="getAllProducts" resultType="com.app.entity.Products">
+        select * from Products
+    </select>
+     <select id="getMy" resultType="com.app.entity.Products">
+        select * from Products where uid=#{uid} 
+    </select>
+     <select id="search" resultType="com.app.entity.Products">
+        select * from Products where product_name LIKE #{product_name}
+    </select>
+     <select id="getProductsRand" resultType="com.app.entity.Products">
+        select * from Products ORDER BY RAND()
+    </select>
+    <select id="getProductsByCate" resultType="com.app.entity.Products">
+        select * from Products where `category`=#{category}
+    </select>
+     <select id="getProductsJz" resultType="com.app.entity.Products">
+        select * from Products where `skuid`=1
+    </select>
+    <insert id="insert" parameterType="com.app.entity.Products">
+        insert into
+        Products(uid,code,product_name,description,thumb,content,category_name,click,category,store,vpath,price,created,updated,status,brandid,brandname,skuid,skuname,jf,shopname,shopid,userid,username,filepath) 
+        values(#{uid},#{code},#{product_name},#{description},#{thumb},#{content},#{category_name},#{click},#{category},#{store},#{vpath},#{price},#{created},#{updated},#{status},#{brandid},#{brandname},#{skuid},#{skuname},#{jf},#{shopname},#{shopid},#{userid},#{username},#{filepath});
+    </insert>
+        
+    <update id="update" parameterType="com.app.entity.Products">
+		update Products set uid=#{uid},code=#{code},product_name=#{product_name},description=#{description},thumb=#{thumb},content=#{content},category_name=#{category_name},click=#{click},category=#{category},store=#{store},vpath=#{vpath},price=#{price},created=#{created},updated=#{updated},status=#{status},brandid=#{brandid},brandname=#{brandname},skuid=#{skuid},skuname=#{skuname},jf=#{jf},shopname=#{shopname},shopid=#{shopid},userid=#{userid},username=#{username},filepath=#{filepath} where id=#{id}
+	</update>
+        </mapper>

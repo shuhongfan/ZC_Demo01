@@ -1,0 +1,41 @@
+//
+// Component: Close
+//
+// ========================================================================
+
+@close-alt-background:                          @global-dark-background;
+
+// New variables
+
+@close-alt-color: 								@global-contrast-color;
+@close-alt-hover-color: 						@global-contrast-color;
+
+
+// Component
+// ========================================================================
+
+.hook-close() {}
+
+
+// Modifier: `uk-close-alt`
+// ========================================================================
+
+.hook-close-alt() {
+	color: @close-alt-color;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-close-misc() {
+
+	.uk-close-alt:after { opacity: 0.9; }
+
+	.uk-close-alt:hover:after,
+	.uk-close-alt:focus:after {
+		opacity: 1;
+		color: @close-alt-hover-color;
+	}
+
+}

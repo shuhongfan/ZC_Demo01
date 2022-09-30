@@ -1,0 +1,117 @@
+//
+// Component: Panel
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@panel-title-margin-bottom:                     @global-margin;
+@panel-title-font-size:                         round((@global-font-size * 1.42));
+@panel-title-line-height:                       round((@panel-title-font-size * 1.32));
+@panel-title-color:                             @global-color;
+@panel-title-text-transform:                    uppercase;
+
+@panel-box-padding:                             30px;
+@panel-box-background:                          rgba(0,0,0,0);
+@panel-box-color:                               @global-color;
+@panel-box-title-color:                         @global-color;
+@panel-box-badge-top:                           15px;
+@panel-box-badge-right:                         0;
+
+@panel-box-primary-background:                  @global-light-background;
+@panel-box-primary-color:                       @global-color;
+@panel-box-primary-title-color:                 @global-color;
+
+@panel-box-secondary-background:                @global-dark-background;
+@panel-box-secondary-color:                     @global-contrast-color;
+@panel-box-secondary-title-color:               @global-contrast-color;
+
+@panel-header-title-border:                     @global-border;
+@panel-header-title-border-width:               @global-border-width;
+@panel-header-title-color:                      @global-color;
+
+@panel-divider-gutter:                          @global-grid-gutter;
+@panel-divider-gutter-large:                    @global-grid-gutter-large;
+@panel-divider-border:                          @global-border;
+
+// New variables
+
+@panel-badge-top:								@panel-box-badge-top;
+@panel-badge-right:								@panel-box-badge-right;
+
+@panel-box-border-width:						@global-border-width;
+@panel-box-border:								@global-border;
+
+
+// Sub-object: `uk-panel-title`
+// ========================================================================
+
+.hook-panel-title() {}
+
+
+// Sub-object: `uk-panel-badge`
+// ========================================================================
+
+.hook-panel-badge() {
+	top: @panel-badge-top;
+    right: @panel-badge-right;
+}
+
+
+// Modifier: `uk-panel-box`
+// ========================================================================
+
+.hook-panel-box() {
+	border: @panel-box-border-width solid @panel-box-border;
+}
+
+//
+// Sub-modifier: `uk-panel-box-primary`
+//
+
+.hook-panel-box-primary() {
+	border-color: transparent;
+}
+
+//
+// Sub-modifier: `uk-panel-box-secondary`
+//
+
+.hook-panel-box-secondary() {
+
+	border-color: transparent;
+
+	.uk-button:not([class*='uk-button-primary']):not([class*='uk-button-success']):not([class*='uk-button-danger']) { background: darken(@panel-box-secondary-background, 5%); }
+
+	.uk-badge:not([class*='uk-badge-success']):not([class*='uk-badge-warning']):not([class*='uk-badge-danger']) {
+	    border-left-color: darken(@panel-box-secondary-background, 10%);
+	    background: darken(@panel-box-secondary-background, 7%);
+	}
+
+	h1, h2, h3, h4, h5 {
+		color: @panel-box-secondary-color;
+	}
+
+}
+
+
+// Modifier: `uk-panel-header`
+// ========================================================================
+
+.hook-panel-header() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-panel-misc() {
+
+	/*
+	 * Nav in panel
+	 */
+
+	.uk-panel-box > .uk-nav-side { margin: 0; }
+
+}

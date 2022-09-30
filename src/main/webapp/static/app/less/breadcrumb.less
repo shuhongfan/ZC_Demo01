@@ -1,0 +1,38 @@
+//
+// Component: Breadcrumb
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@breadcrumb-divider:                            "|";
+@breadcrumb-disabled-color:                     @global-muted-color;
+
+// New variables
+
+@breadcrumb-divider-color:						@global-border;
+@breadcrumb-text-transform: 					@global-text-transform;
+
+
+// Component
+// ========================================================================
+
+.hook-breadcrumb() {
+	text-transform: @breadcrumb-text-transform;
+}
+
+
+// Items
+// ========================================================================
+
+.hook-breadcrumb-divider() {
+	color: @breadcrumb-divider-color;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-breadcrumb-misc() {}

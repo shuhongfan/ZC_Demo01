@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="zc"
+  id="myeclipse.1571116594769"
+  context-root="/zc-web-app"
+  j2ee-spec="1.7"
+  archive="zc.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

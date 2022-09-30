@@ -1,0 +1,72 @@
+//
+// Component: Dropdown
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@dropdown-z-index:                              @global-z-index + 20;
+@dropdown-margin-top:                           10px;
+@dropdown-padding:                              30px;
+@dropdown-background:                           @global-background;
+@dropdown-color:                                @global-color;
+
+@dropdown-divider-border:                       @global-border;
+@dropdown-divider-border-width:      			0;
+
+@dropdown-small-padding:                        15px;
+
+@dropdown-navbar-margin:                        -@global-border-width;
+@dropdown-navbar-background:                    @global-background;
+@dropdown-navbar-color:                         @global-color;
+@dropdown-navbar-animation:                     uk-fade;
+
+// New variables
+
+@dropdown-border:								@global-border;
+@dropdown-border-width: 						@global-border-width;
+
+@dropdown-navbar-border:						@global-border;
+@dropdown-navbar-border-width: 					@global-border-width;
+
+
+// Component
+// ========================================================================
+
+.hook-dropdown() {
+	border: @dropdown-border-width solid @dropdown-border;
+}
+
+
+// Modifier: `uk-dropdown-navbar`
+// ========================================================================
+
+.hook-dropdown-navbar() {
+	border: @dropdown-navbar-border-width solid @dropdown-navbar-border;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-dropdown-misc() {
+
+	// Nav in dropdown
+	.uk-dropdown .uk-nav { margin: 0; }
+
+
+	/* Tablet and bigger */
+	@media (min-width: @breakpoint-medium) {
+
+	    /*
+	     * Horizontal gutter
+	     */
+
+	    .uk-dropdown:not(.uk-dropdown-stack) > .uk-dropdown-grid { margin-right: 0; }
+	    .uk-dropdown:not(.uk-dropdown-stack) > .uk-dropdown-grid > [class*='uk-width-'] { padding-right: 0; }
+
+	}
+
+}

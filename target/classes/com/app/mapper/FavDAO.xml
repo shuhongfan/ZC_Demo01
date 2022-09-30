@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.mapper.FavDAO"> 
+    <select id="getFavById"  resultType="com.app.entity.Fav">
+        select
+        * from Fav where `id`=#{id}
+    </select>
+    <delete id="delete">
+		delete from Fav where id=#{id}
+	</delete>
+    <select id="getFavCount" resultType="int">
+        select count(id) from Fav
+    </select>
+    <select id="getAllFav" resultType="com.app.entity.Fav">
+        select * from Fav
+    </select>
+    <select id="getFav1" resultType="com.app.entity.Fav">
+        select * from Fav where uid=#{uid}
+    </select>
+      <select id="getFav2" resultType="com.app.entity.Fav">
+        select * from Fav where uid=#{uid} AND pid=#{pid}
+    </select>
+    <insert id="insert" parameterType="com.app.entity.Fav">
+        insert into
+        Fav(uid,pid) 
+        values(#{uid},#{pid});
+    </insert>
+        
+    <update id="update" parameterType="com.app.entity.Fav">
+		update Fav set uid=#{uid},pid=#{pid}, where id=#{id}
+	</update>
+        </mapper>

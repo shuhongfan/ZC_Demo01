@@ -1,0 +1,67 @@
+//
+// Component: Table
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@table-margin-vertical:                         @global-margin;
+@table-padding-vertical:                        10px;
+@table-padding-horizontal:                      10px;
+
+@table-caption-color:                           @global-muted-color;
+
+@table-striped-background:                      @global-light-background;
+
+@table-hover-background:                        darken(@global-light-background, 2%);
+
+// New variables
+
+@table-border-width: 							1px;
+@table-border: 									@global-border;
+
+@table-head-color: 								@global-muted-color;
+@table-head-font-size: 							round((@global-font-size * 0.85));
+@table-head-text-transform: 					@global-text-transform;
+
+
+// Component
+// ========================================================================
+
+.hook-table() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-table-misc() {
+
+	.uk-table {
+
+		td,
+		tfoot td { border-top: @table-border-width solid @table-border; }
+
+		> tbody:first-child tr:first-child td {
+			padding-top: 0;
+			border-top-width: 0;
+		}
+
+	}
+
+	.uk-table thead {
+	    text-transform: @table-head-text-transform;
+	    font-size: @table-head-font-size;
+	    color: @table-head-color;
+	}
+
+	.uk-table:not(.uk-table-striped) th,
+	.uk-table:not(.uk-table-striped) td {
+
+		&:first-child { padding-left: 0; }
+		&:last-child { padding-right: 0; }
+
+	}
+
+}

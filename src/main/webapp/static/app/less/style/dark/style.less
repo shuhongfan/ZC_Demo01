@@ -1,0 +1,233 @@
+//
+// Style: dark
+//
+// ========================================================================
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300');
+@import url('http://fonts.googleapis.com/css?family=Playfair+Display');
+
+
+// UIkit variables
+// ========================================================================
+
+//
+// Global
+//
+
+@global-color:                                  #eee;
+@global-muted-color:                            #7e7e7a;
+@global-link-color:                             #7e7e7a;
+@global-link-hover-color:                       #7e7e7a;
+@global-primary-color: 							#d8b176;
+@global-contrast-color:                         #242423;
+
+@global-background:                             #292928;
+@global-dark-background:						#242423;
+@global-light-background: 						#303030;
+@global-primary-background:                     #d8b176;
+@global-success-background:                     #94C472;
+@global-warning-background:                     #CE783E;
+@global-danger-background:                      #CA444A;
+
+@global-border:                                 #353434;
+
+//
+// Alert
+//
+
+@alert-background:                              @global-primary-background;
+@alert-color:                                   @global-contrast-color;
+@alert-success-background:                      @global-success-background;
+@alert-success-color:                           @global-color;
+@alert-warning-background:                      @global-warning-background;
+@alert-warning-color:                           @global-color;
+@alert-danger-background:                       @global-danger-background;
+@alert-danger-color:                            @global-color;
+
+//
+// Article
+//
+
+@article-lead-font-weight:                      300;
+
+//
+// Badge
+//
+
+@badge-font-weight:                             300;
+@badge-background:                              #3d3d3d;
+@badge-color:                                   #fff;
+@badge-success-border:							darken(@badge-success-background, 15%);
+@badge-warning-border:							darken(@badge-warning-background, 15%);
+@badge-danger-border:							darken(@badge-danger-background, 12%);
+
+//
+// Base
+//
+
+@base-body-background:                          #292928;
+@base-body-font-family:                         "Open Sans", sans-serif;
+@base-body-font-weight:                         300;
+@base-heading-font-family:                      "Playfair Display", serif;
+@base-h1-font-size:                             26px;
+@base-h2-font-size:                             22px;
+@base-h3-font-size:                             18px;
+
+//
+// Button
+//
+
+@button-background:                             #3d3d3d;
+@button-color:                             		@global-color;
+@button-color:                                  @global-color;
+@button-hover-background:               		lighten(@button-background, 3%);
+@button-hover-color:                            @global-color;
+@button-active-background:                      lighten(@button-hover-background, 3%);
+@button-active-color:                           @global-color;
+@button-primary-color:                          @global-color;
+@button-primary-hover-background:               lighten(@button-primary-background, 5%);
+@button-primary-hover-color:                    @global-color;
+@button-primary-active-background:              lighten(@button-primary-hover-background, 3%);
+@button-primary-active-color:                   @global-color;
+@button-success-color:                          @global-color;
+@button-success-hover-background:               lighten(@button-success-background, 3%);
+@button-success-hover-color:                    @global-color;
+@button-success-active-background:              lighten(@button-success-hover-background, 3%);
+@button-success-active-color:                   @global-color;
+@button-danger-color:                           @global-color;
+@button-danger-hover-background:                lighten(@button-danger-background, 5%);
+@button-danger-hover-color:                     @global-color;
+@button-danger-active-background:               lighten(@button-danger-hover-background, 3%);
+@button-danger-active-color:                    @global-color;
+
+//
+// Close
+//
+
+@close-alt-color: 								@global-color;
+@close-alt-hover-color: 						@global-color;
+
+//
+// Form
+//
+
+@form-focus-border:                             lighten(@form-border, 30%);
+@form-disabled-background:                      @global-dark-background;
+
+//
+// Nav
+//
+
+@nav-dropdown-color:                            #9e9e9e;
+@nav-dropdown-hover-color:                      @global-color;
+@nav-navbar-color:                              #9e9e9e;
+
+@nav-offcanvas-color:                           @offcanvas-panel-link-color;
+@nav-offcanvas-hover-color:                     @offcanvas-panel-color;
+@nav-offcanvas-active-color:                    @offcanvas-panel-color;
+@nav-offcanvas-header-color:                    @offcanvas-panel-color;
+@nav-offcanvas-divider-border:                  darken(@offcanvas-bar-background, 5%);
+@nav-offcanvas-nested-color:                    @offcanvas-panel-link-color;
+@nav-offcanvas-nested-hover-color:              @offcanvas-panel-color;
+
+//
+// Navbar
+//
+
+@navbar-nav-font-family:                        "Open Sans", sans-serif;
+@navbar-brand-font-size:                        35px;
+
+@navbar-brand-font-family: 						"Playfair Display", serif;
+@navbar-brand-line-height: 						@navbar-brand-font-size;
+@navbar-brand-text-transform: 					@global-text-transform;
+
+//
+// Offcanvas
+//
+
+@offcanvas-background:                          rgba(0,0,0,0.5);
+@offcanvas-bar-background:                      darken(@global-dark-background, 1%);
+@offcanvas-panel-color:                         @global-color;
+@offcanvas-panel-title-color:                   @global-color;
+@offcanvas-panel-link-color:                    lighten(@global-link-color, 5%);
+@offcanvas-panel-link-hover-color:              @offcanvas-panel-link-color;
+
+//
+// Overlay
+//
+
+@overlay-area-icon-color:                       #fff;
+@overlay-caption-color:                         #fff;
+
+//
+// Panel
+//
+
+@panel-box-secondary-color:                     @global-color;
+@panel-box-secondary-title-color:               @global-color;
+
+//
+// Progress
+//
+
+@progress-background:                           @global-dark-background;
+@progress-bar-color:                            @global-color;
+
+//
+// Search
+//
+
+@offcanvas-search-color:                        @global-color;
+@offcanvas-search-icon-color:                   @global-color;
+
+//
+// Tooltip
+//
+
+@tooltip-color:                                 @global-color;
+
+
+// Addons variables
+// ========================================================================
+
+//
+// Slidenav
+//
+
+@slidenav-color:                                #fff;
+@slidenav-hover-color:                          @slidenav-color;
+@slidenav-active-color:                         @slidenav-color;
+@slidenav-background: 							@global-primary-background;
+
+
+// Custom variables
+// ========================================================================
+
+//
+// Layout
+//
+
+@bh-navbar-sticky-box-shadow:                   rgba(0,0,0,0.3);
+
+//
+// Button
+//
+
+@bh-button-secondary-color:						@global-color;
+@bh-button-secondary-hover-color:				@global-contrast-color;
+@bh-button-secondary-border:					@bh-button-secondary-color;
+@bh-button-secondary-hover-background:			@global-color;
+@bh-button-secondary-hover-border: 				@global-color;
+
+//
+// Icon
+//
+
+@bh-icon-large-border: 				    		@global-border;
+
+//
+// Tag
+//
+
+@bh-tag-background: 							@badge-background;
+@bh-tag-hover-color: 							@global-color;

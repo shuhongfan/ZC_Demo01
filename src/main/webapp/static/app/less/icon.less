@@ -1,0 +1,66 @@
+//
+// Component: Icon
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@icon-button-width:                             30px;
+@icon-button-background:                        rgba(0,0,0,0);
+@icon-button-color:                             @global-color;
+
+@icon-button-hover-background:                  @global-color;
+@icon-button-hover-color:                       @global-contrast-color;
+
+@icon-button-active-background:                 @icon-button-hover-background;
+@icon-button-active-color:                      @icon-button-hover-color;
+
+// New variables
+
+@icon-button-border-width:						2px;
+@icon-button-border: 							@global-color;
+
+@icon-button-hover-border: 						@global-color;
+
+@icon-button-active-border: 					@global-color;
+
+
+// Modifier: `uk-icon-button`
+// ========================================================================
+
+.hook-icon-button() {
+	border: @icon-button-border-width solid @icon-button-border;
+}
+
+// Hover
+.hook-icon-button-hover() {
+	border-color: @icon-button-hover-border;
+	-webkit-transition: all .25s;
+			transition: all .25s;
+}
+
+// Active
+.hook-icon-button-active() {
+	border-color: @icon-button-active-border;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-icon-misc() {
+
+	a:not([class*='uk-button']) > [class*='uk-icon-'] {
+
+		color: @global-color;
+
+		&:hover,
+		&:focus { color: @global-primary-color; }
+
+		&:active { color: darken(@global-primary-color, 5%); }
+
+	}
+
+}

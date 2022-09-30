@@ -1,0 +1,37 @@
+//
+// Component: Dotnav
+//
+// ========================================================================
+
+@dotnav-margin-left:                            10px;
+@dotnav-width:                                  15px;
+@dotnav-background:                             fade(@global-dark-background, 30%);
+
+@dotnav-hover-background:                       fade(@global-dark-background, 40%);
+@dotnav-onclick-background:                     fade(@global-dark-background, 50%);
+@dotnav-active-background:                      @global-primary-background;
+
+
+// Variables
+// ========================================================================
+
+
+// Component
+// ========================================================================
+
+.hook-dotnav-item() {
+	-webkit-transition: -webkit-transform 0.3s ease, background-color 0.3s ease;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hook-dotnav-item-hover() {}
+
+.hook-dotnav-item-onclick() {}
+
+.hook-dotnav-item-active() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-dotnav-misc() {}
